@@ -16,7 +16,7 @@ body {
 
 /* button */
 .btn {
-    margin: 15px;
+    margin: 100px;
     padding: 15px 40px;
     border: none;
     outline: none;
@@ -68,7 +68,7 @@ body {
         background-position: 400% 0;
     }
 
-  
+
 }
 
 .btn:active:after {
@@ -139,57 +139,5 @@ body {
     .glow-btn::before {
         transition: none;
         transform: none;
-    }
-}
-
-/* Layout and Logo Styles */
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    width: 100%;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.logo-container img {
-    max-width: 180px;
-    height: auto;
-    filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.5));
-    animation: logo-glow 3s ease-in-out infinite alternate;
-    transition: transform 0.3s ease;
-}
-
-.logo-container img:hover {
-    transform: scale(1.08) rotate(2deg);
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-@keyframes logo-glow {
-    0% {
-        filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4));
-        transform: translateY(0);
-    }
-    100% {
-        filter: drop-shadow(0 0 25px rgba(45, 212, 191, 0.85));
-        transform: translateY(-8px);
     }
 }

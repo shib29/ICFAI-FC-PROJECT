@@ -2688,12 +2688,13 @@ body.loaded>*:not(.loading-screen) {
   width: 28px;
   height: 28px;
   filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
 .footer-social-handles .social-row img:hover {
   transform: scale(1.1);
+  filter: none;
 }
 
 
