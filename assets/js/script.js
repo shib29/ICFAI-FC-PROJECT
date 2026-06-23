@@ -2,17 +2,33 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeo
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, ScrollToPlugin);
 }
 
+function runWhenReady(fn) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fn);
+  } else {
+    fn();
+  }
+}
 
-document.addEventListener('DOMContentLoaded', function () {
+runWhenReady(function () {
   const loadingScreen = document.getElementById('loadingScreen');
-
-  setTimeout(function () {
-    document.body.classList.add('loaded');
-    loadingScreen.style.opacity = '0';
+  if (loadingScreen) {
     setTimeout(function () {
-      loadingScreen.remove();
-    }, 500);
-  }, 2000);
+      const body = document.body || document.getElementsByTagName('body')[0];
+      if (body) body.classList.add('loaded');
+      loadingScreen.style.opacity = '0';
+      loadingScreen.style.pointerEvents = 'none';
+      setTimeout(function () {
+        loadingScreen.style.display = 'none';
+        if (loadingScreen.parentNode) {
+          loadingScreen.parentNode.removeChild(loadingScreen);
+        }
+      }, 500);
+    }, 2000);
+  } else {
+    const body = document.body || document.getElementsByTagName('body')[0];
+    if (body) body.classList.add('loaded');
+  }
 });
 
 
@@ -128,8 +144,9 @@ window.onload = function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+runWhenReady(function () {
   const carousel = document.getElementById('carousel');
+  if (!carousel) return;
   const items = carousel.querySelectorAll('.carousel-item');
   const dots = document.querySelectorAll('.dot');
   let currentIndex = 0;
@@ -483,7 +500,7 @@ function forceImagesVisible() {
 
 
 // Initialize everything
-document.addEventListener('DOMContentLoaded', () => {
+runWhenReady(() => {
   console.log('DOM loaded, initializing jersey animations...');
 
   // Check if all required elements exist
@@ -604,7 +621,7 @@ window.addEventListener('resize', () => {
 
 
 // --- VIDEO CAROUSEL FIXED CODE ---
-document.addEventListener('DOMContentLoaded', function () {
+runWhenReady(function () {
   // Video carousel variables
   let currentSlide = 0;
   const carouselTrack = document.getElementById('carouselTrack');
@@ -686,3 +703,41 @@ document.addEventListener('DOMContentLoaded', function () {
 function goToNews(id) {
   window.location.href = `newsdetails.html?id=${id}`;
 }
+
+// Side Drawer Toggle Logic
+const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+const mobileSidebarToggleBtn = document.getElementById('mobileSidebarToggleBtn');
+const sideDrawer = document.getElementById('sideDrawer');
+const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+const drawerOverlay = document.getElementById('drawerOverlay');
+
+function openDrawer() {
+  if (sideDrawer && drawerOverlay) {
+    sideDrawer.classList.add('open');
+    drawerOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden'; // Disable scroll
+  }
+}
+
+function closeDrawer() {
+  if (sideDrawer && drawerOverlay) {
+    sideDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('open');
+    document.body.style.overflow = ''; // Enable scroll
+  }
+}
+
+if (sidebarToggleBtn) sidebarToggleBtn.addEventListener('click', openDrawer);
+if (mobileSidebarToggleBtn) mobileSidebarToggleBtn.addEventListener('click', openDrawer);
+if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+// Close drawer when clicking internal links
+const drawerLinks = document.querySelectorAll('.drawer-links a');
+drawerLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (link.getAttribute('href').startsWith('#')) {
+      closeDrawer();
+    }
+  });
+});

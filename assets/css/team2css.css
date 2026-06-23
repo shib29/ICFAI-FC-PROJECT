@@ -1,0 +1,331 @@
+:root {
+    --primary: #0e9f9f;
+    --secondary: #14b8a6;
+    --accent: #99f6e4;
+    --dark: #020e0e;
+    --light: #f0fffe;
+    --neon: #2dd4bf;
+    --neon-alt: #67e8f9;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #020e0e 0%, #051e1e 50%, #032020 100%);
+    margin: 0;
+    padding: 0;
+    color: var(--light);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Cyberpunk grid effects */
+.tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at 50% 50%, rgba(14, 159, 159, 0.15), transparent 80%);
+}
+
+.grid-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+        linear-gradient(rgba(45, 212, 191, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.6;
+    animation: grid-move 25s linear infinite;
+}
+
+@keyframes grid-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    padding: 15px 50px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    border-radius: 50px;
+    z-index: 1;
+    cursor: default;
+}
+
+h1::before {
+    content: "";
+    background: linear-gradient(90deg, #FF0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    background-size: 600% 100%;
+    z-index: -2;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    filter: blur(25px);
+    opacity: 0.6;
+    border-radius: 50px;
+    pointer-events: none;
+    animation: rainbow-glow 10s linear infinite;
+    transition: all 0.3s ease-in-out;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 30, 30, 0.8);
+    border-radius: 50px;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1:hover::before {
+    opacity: 1;
+    filter: blur(35px);
+    animation: rainbow-glow 15s linear infinite;
+}
+
+@keyframes rainbow-glow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+header h3 {
+    font-size: 1.3rem;
+    color: var(--neon);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+    0% {
+        filter: drop-shadow(0 0 2px rgba(45, 212, 191, 0.4));
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(103, 232, 249, 0.65));
+    }
+}
+
+/* Team Members Cards */
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.member:hover {
+    border-color: rgba(45, 212, 191, 0.4);
+    box-shadow: 0 15px 35px rgba(45, 212, 191, 0.15), 0 0 15px rgba(45, 212, 191, 0.05);
+    transform: translateY(-5px);
+}
+
+.image-holder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    margin-right: 25px;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.member:hover .image-holder {
+    border-color: var(--neon);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.5);
+    transform: scale(1.05);
+}
+
+.image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    flex-grow: 1;
+}
+
+.member-name {
+    font-size: 1.4rem;
+    margin: 0 0 5px 0;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.member-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 15px 0;
+    font-weight: 300;
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(45deg, var(--secondary), var(--neon));
+    color: #FFFFFF;
+    padding: 8px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.25);
+}
+
+.linkedin-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(45, 212, 191, 0.4);
+    background: linear-gradient(45deg, var(--neon), var(--neon-alt));
+    color: #FFFFFF;
+}
+
+.linkedin-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Floating Animations */
+@keyframes float-rotate-odd {
+    0%, 100% {
+        transform: translateY(0) rotate(-0.5deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+}
+
+@keyframes float-rotate-even {
+    0%, 100% {
+        transform: translateY(0) rotate(0.5deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(-0.5deg);
+    }
+}
+
+.member:nth-child(odd) {
+    animation: float-rotate-odd 6s ease-in-out infinite;
+}
+
+.member:nth-child(even) {
+    animation: float-rotate-even 6s ease-in-out infinite 1.5s;
+}
+
+.member:hover {
+    animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 15px;
+    }
+
+    header {
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        padding: 12px 30px;
+        letter-spacing: 2px;
+    }
+
+    header h3 {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .member {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .image-holder {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.7rem;
+        padding: 10px 20px;
+        letter-spacing: 1px;
+    }
+
+    .image-holder {
+        width: 90px;
+        height: 90px;
+    }
+}

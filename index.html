@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICFAI FC - Football Club</title>
   <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=3.2" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -17,8 +17,46 @@
     </div>
   </div>
 
+  <!-- Side Drawer Menu -->
+  <div class="side-drawer" id="sideDrawer">
+    <div class="drawer-header">
+      <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI FC Logo" class="drawer-logo">
+      <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#results"><i class="fas fa-calendar-check"></i> Fixtures & Results</a></li>
+      <li><a href="#squad"><i class="fas fa-users"></i> Star Players</a></li>
+      <li><a href="#achievement"><i class="fas fa-trophy"></i> Achievements</a></li>
+      <li><a href="#news"><i class="fas fa-newspaper"></i> News</a></li>
+      <li><a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScfk53COwXalGn_AhkOUZK2DiVphfoqzO7gKApFZwHls8hN9A/viewform?usp=dialog"
+          target="_blank"><i class="fas fa-file-signature"></i> Participation</a></li>
+      <li><a href="#sponsors-section"><i class="fas fa-handshake"></i> Sponsors</a></li>
+
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Top Header Bar (Social Media Links) -->
+  <div class="top-header">
+    <div class="top-header-container">
+      <div class="top-header-socials">
+        <a href="https://www.facebook.com/iuTripura" target="_blank" title="Facebook"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/icfaitripura" target="_blank" title="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCLmW99rNwXES9EpipbpzZbA" target="_blank" title="YouTube"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
   <!-- Navbar -->
   <nav class="navbar">
+    <div class="mobile-menu-toggle" id="mobileSidebarToggleBtn">
+      <i class="fas fa-bars"></i>
+    </div>
     <div class="logo" id="logo1">
       <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI Logo" />
     </div>
@@ -40,6 +78,12 @@
   <div class="nav">
     <div class="nav-container">
       <ul class="links left">
+        <li>
+          <a href="javascript:void(0)" class="sidebar-toggle-btn" id="sidebarToggleBtn"
+            style="color: white; text-decoration: none; font-family: 'Oswald', sans-serif; font-weight: 500;">
+            <i class="fas fa-bars" style="margin-right: 8px;"></i> Menu
+          </a>
+        </li>
         <li><a href="#home">Home</a></li>
         <li><a href="#results"> Fixtures & Results</a></li>
         <li><a href="#squad">Star Players</a></li>
@@ -61,7 +105,7 @@
       <h1 class="hero-title">WELCOME TO ICFAI FC</h1>
       <p class="hero-motto">ONE TEAM, ONE DREAM</p>
       <div class="hero-buttons">
-                <a href="https://www.facebook.com/icfaifc" target="_blank" > Join us</a>
+        <a href="https://www.facebook.com/icfaifc" target="_blank"> Join us</a>
 
         <!-- <button class="btn btn-primary">Join Us</button> -->
       </div>
@@ -169,7 +213,7 @@
     <div class="achievment a">
       <div class="setA">
         <div class="image-content" id="trophy">
-          <img src="./assets/images/trophy.webp" alt="" srcset="">
+          <img src="./assets/images/trophy_white.webp" alt="ICFAI FC Fair Play Trophy" srcset="">
         </div>
         <div class="textContent">
           <img src="./assets/images/qleft.webp" alt="Quote Icon" class="quote-icon-left">
@@ -475,17 +519,41 @@
       <a href="./news.html" class="newsdirectbtn">View More</a>
     </div>
   </section>
+  <!-- Participation Section -->
+  <section class="participation-section" id="participation">
+    <div class="participation-container">
+      <h2 class="participation-title">Participation</h2>
+      <p class="participation-subtitle">Join the ICFAI Football Club! Register using the Google Form below to
+        participate in our trials, membership recruitment, and volunteering activities.</p>
 
+      <div class="participation-card">
+        <div class="form-icon">
+          <i class="fas fa-file-signature"></i>
+        </div>
+        <h3>Registration Form</h3>
+        <p>Please click the button below to open the official registration form in a new tab. Fill out your details, and
+          our club representatives will get in touch with you shortly.</p>
 
+        <!-- TODO: Replace the href below with your actual Google Form URL -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_YOUR_GOOGLE_FORM_ID_HERE/viewform?usp=sf_link"
+          target="_blank" class="participation-btn">
+          <i class="fab fa-google"></i> Open Google Form
+        </a>
+      </div>
+    </div>
+  </section>
 
 
   <!--Gourab's Code-->
 
   <section class="sponsors-section" id="sponsors-section">
-    <h2>Our Sponsors</h2>
     <div class="sponsor-logos">
-      <div class="logo-box">
-        <img src="./assets/images/icfai.webp" alt="Logo">
+      <div class="logo-box sponsor-logo-left">
+        <img src="./assets/images/icfai.webp" alt="ICFAI University Tripura Logo">
+        <p class="sponsor-name">ICFAI University Tripura</p>
+      </div>
+      <div class="logo-box sponsor-banner-box">
+        <img src="./assets/images/sponser.webp?v=1.5" alt="Our Sponsor - ICFAI University Tripura">
       </div>
     </div>
   </section>
@@ -551,7 +619,6 @@
       <a href="https://www.facebook.com/icfaifc" class="view-more-btn" target="_blank">View More</a>
     </div>
   </section>
-  </section>
   <footer class="site-footer">
     <div class="footer-container">
 
@@ -568,7 +635,7 @@
                 <img src="./assets/images/instagram-logo (1).webp" alt="Instagram" />
               </a>
               <a href="https://www.facebook.com/icfaifc" target="_blank">
-                <img src="./assets/images/download__7_-removebg-preview (1).webp" alt="Facebook" />
+                <img src="./assets/images/facebook.webp" alt="Facebook" />
               </a>
               <span></span>
             </div>
@@ -596,7 +663,6 @@
 
       </div>
     </div>
-    </div>
 
     <!-- SOCIAL HANDLES ROWS -->
 
@@ -607,6 +673,9 @@
       <p>Developed by:
         <a href="./team.html"> KODEWARE</a>
       </p>
+      <p>Edited by:
+        <a href="./team2.html"> TEAM ELITE</a>
+      </p>
     </div>
   </footer>
 
@@ -615,7 +684,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js?v=1.5"></script>
 </body>
 
 </html>
