@@ -989,14 +989,14 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .a {
-  background: url('../images/achievment-bg.webp');
+  background: url('../images/achievment-bg.webp?v=3');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .b {
-  background: url('../images/achievment-bg2.webp');
+  background: url('../images/achievment-bg2.webp?v=3');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1440,7 +1440,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .c {
-  background: url('../images/achievment-bg3.webp');
+  background: url('../images/achievment-bg3.webp?v=3');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1562,7 +1562,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .d {
-  background: url('../images/achievment-bg4.webp'), url('../images/football.webp');
+  background: url('../images/achievment-bg4.webp?v=3'), url('../images/football.webp');
   background-position: center, right bottom;
   background-repeat: no-repeat;
   background-size: contain, 20%;
@@ -1672,7 +1672,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .e {
-  background: url('../images/achievment-bg5.webp');
+  background: url('../images/achievment-bg5.webp?v=3');
   background-position: center;
   background-size: contain;
 }
@@ -1738,7 +1738,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .f {
-  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/achievment-bg6.webp') no-repeat;
+  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/achievment-bg6.webp?v=3') no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -1836,7 +1836,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .g {
-  background: linear-gradient(135deg, rgba(3, 3, 3, 0.3), rgba(56, 55, 55, 0.773)), url('../images/achievment-bg7.webp') no-repeat;
+  background: linear-gradient(135deg, rgba(3, 3, 3, 0.3), rgba(56, 55, 55, 0.773)), url('../images/achievment-bg7.webp?v=3') no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -3658,7 +3658,7 @@ body.loaded>*:not(.loading-screen) {
 
 .featured-video-section {
   text-align: center;
-  background: linear-gradient(135deg, rgba(56, 54, 54, 0.85) 0%, rgba(209, 206, 206, 0.5) 100%), url(../images/achievment-bg4.webp);
+  background: linear-gradient(135deg, rgba(56, 54, 54, 0.85) 0%, rgba(209, 206, 206, 0.5) 100%), url(../images/achievment-bg4.webp?v=3);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -4168,7 +4168,7 @@ body.loaded>*:not(.loading-screen) {
 .participation-section {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(135deg, rgba(20, 0, 0, 0.9), rgba(0, 0, 0, 0.95)), url('../images/achievment-bg.webp');
+  background: linear-gradient(135deg, rgba(20, 0, 0, 0.9), rgba(0, 0, 0, 0.95)), url('../images/achievment-bg.webp?v=3');
   background-position: center;
   background-size: cover;
   font-family: 'Oswald', sans-serif;
